@@ -1,26 +1,45 @@
 @import "tailwindcss";
 
+/* Define que la variante 'dark' se active cuando la clase .dark esté en el HTML */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fbfbfa;
+  --foreground: #12100d;
+  --muted: #b1afaf;
+  --primary-foreground: #12100d;
+  --hover: #edebe7;
+  --primary: #fbfbfa;
+  --border: #e4e4e9;
 }
 
-@theme inline {
+/* Modo oscuro automático o manual cuando el HTML tiene la clase .dark */
+.dark {
+      --background: #141211;
+      --foreground: #fbfbfa;
+      --muted: #979797;
+      --hover: #25221f;
+      --primary: #12100d;
+      --border: #2e2d2d;
+      --primary-foreground: #fbfbfa;
+}
+
+@theme inline { 
   --color-background: var(--background);
+  --color-primary: var(--primary);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-primary-foreground: var(--primary-foreground);  
+  --color-border: var(--border); 
+  --color-hover: var(--hover);
+  --font-dmSans: var(--font-dm-sans);
+  --font-cormorantGaramond: var(--font-cormorant-garamond);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
+body { 
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition:
+    color 300ms ease,
+    color 300ms ease;
 }
