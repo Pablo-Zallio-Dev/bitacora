@@ -13,6 +13,17 @@ interface TripPageProps {
       }>;
 }
 
+
+export async function generateStaticParams() {
+  // Obtenemos los slugs de todos los viajes definidos en el diccionario
+  const slugs = dict.es.trips.map((trip) => ({
+    slug: trip.slug,
+  }));
+
+  return slugs;
+}
+
+
 export default async function TripDetailPage({ params, searchParams }: TripPageProps) {
       const resolvedParams = await params;
       const resolvedSearch = await searchParams;
