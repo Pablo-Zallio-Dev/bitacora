@@ -3,6 +3,7 @@ import { dict } from '@/app/data/dictionary';
 import Link from 'next/link';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
 
 interface TripPageProps {
       params: Promise<{
@@ -12,6 +13,7 @@ interface TripPageProps {
             lang?: string;
       }>;
 }
+
 
 
 export async function generateStaticParams() {
