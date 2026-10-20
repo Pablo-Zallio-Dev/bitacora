@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../atoms/Logo'
 import ButtonNav from '../atoms/ButtonNav'
 import { dict } from '@/app/data/dictionary';
+import { createPortal } from 'react-dom';
+import ModalAbout from './ModalAbout';
 
 export default function Header({ toggleTheme, lang, setLang, isDark }: { toggleTheme: () => void, lang: 'es' | 'en', setLang: (lang: 'es' | 'en') => void, isDark: boolean }) {
+
+      const [openModal, setOpenModal] = useState(false)
       const text = dict[lang].nav;
       return (
-            <header className=" flex flex-col sm:flex-row sm:justify-between items-center sm:py-10  border-b border-border ">
+            <header className=" flex flex-col sm:flex-row sm:justify-between items-center sm:py-10 my-8  border-b border-border ">
                   <Logo />
 
                   <div className=" flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-10 sm:pt-0  ">
                         <nav className=" flex items-start gap-6 font-dmSans text-xs">
                               <ButtonNav href="/" text={text.journal} />
-                              <button className=" lg:hover:bg-hover rounded-md py-2 transition-all duration-100  ">{text.about}</button>
+                              <button className=" lg:hover:bg-hover rounded-md py-2 transition-all duration-100  " onClick={() => setOpenModal(true)} >{text.about}</button>
                         </nav>
                         <div className="  flex justify-self-start gap-18   ">
 
@@ -33,6 +37,12 @@ export default function Header({ toggleTheme, lang, setLang, isDark }: { toggleT
                               </div>
                         </div>
                   </div>
+                  {
+                        openModal && createPortal(
+                              <ModalAbout lang={lang} setOpenModal={() => setOpenModal(false)} /> ,
+                              document.body
+                        )
+                  }
             </header>
       )
 }

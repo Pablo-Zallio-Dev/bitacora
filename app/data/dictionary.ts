@@ -58,7 +58,12 @@ export const dict = {
 
             ]
       }
-    ]
+    ],
+    modal: {
+      overtitle: "Dentro de Bitacora",
+      titleModal: "¿Que es Bitacora?",
+      textModal: "Bitácora nació con el mero hecho de contar historias a través de las fotografías que yo mismo realizo y edito, así como de los viajes que he realizado y los que tendré la oportunidad de hacer. De esta manera, busco compartir mis experiencias contadas mediante la fotografía."
+    }
   },
   en: {
     nav: {
@@ -115,6 +120,11 @@ export const dict = {
                   "/images/florencia/florencia_14.webp",
             ]
       }
-    ]
+    ],
+    modal: {
+      overtitle: "Inside Bitacora",
+      titleModal: "What is Bitacora?",
+      textModal: "Bitácora began simply as a way of telling stories through the photographs I take and edit myself, as well as through the journeys I have made and those I will have the opportunity to make. In this way, I aim to share my experiences as told through photography."
+    }
   }
 };

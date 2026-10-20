@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function TextPage({children}: {children: string}) {
+export default function TextPage({children, className}: {children: string, className?: string}) {
   return (
-    <p className=" max-w-190 font-dmSans text-xs text-center tracking-wider ">{children}</p>
+    <p className={` max-w-190 font-dmSans text-xs tracking-wider ${className} `}>{children}</p>
   )
 }

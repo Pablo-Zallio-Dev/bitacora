@@ -5,17 +5,19 @@
 
 :root {
   --background: #fbfbfa;
-  --foreground: #12100d;
-  --muted: #b1afaf;
+  --background-modal: #f3f3ee;
+  --foreground: #12100d; 
+  --muted: #b1afaf;  
   --primary-foreground: #12100d;
   --hover: #edebe7;
-  --primary: #fbfbfa;
-  --border: #e4e4e9;
+  --primary: #fbfbfa; 
+  --border: #e4e4e9;   
 }
 
 /* Modo oscuro automático o manual cuando el HTML tiene la clase .dark */
 .dark {
       --background: #141211;
+      --background-modal: #2f2b28; 
       --foreground: #fbfbfa;
       --muted: #979797;
       --hover: #25221f;
@@ -26,6 +28,7 @@
 
 @theme inline { 
   --color-background: var(--background);
+  --color-backgroundModal: var(--background-modal);
   --color-primary: var(--primary);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
